@@ -31,6 +31,8 @@ A sophisticated, modular calculator application built with Python that integrate
 - **Validation**: Comprehensive configuration validation with error handling
 - **Flexible Settings**: Customizable precision, history size, and file paths
 
+
+
 ## Requirements
 
 - Python 3.8+
@@ -39,9 +41,13 @@ A sophisticated, modular calculator application built with Python that integrate
 - pytest-cov
 - python-dotenv
 
-## Installation
+## Installation## Installation
 
-
+### 0. Clone the Repository
+```bash
+git clone https://github.com/Rajat-njit/calculator.git
+cd calculator
+```
 ### 1. Create and Activate Virtual Environment
 
 **On macOS/Linux:**
@@ -290,9 +296,5 @@ All configuration options can be set via environment variables in the `.env` fil
 | `CALCULATOR_LOG_DIR` | logs/ | Directory for log files |
 | `CALCULATOR_HISTORY_DIR` | history/ | Directory for history files |
 
-## Troubleshooting
-
-### Common Issues
-
-**Issue**: `ModuleNotFoundError: No module named 'app'`
-**Solution**: Make sure you're running from the project root directory and have activated the virtual environment.
+## Author
+**Rajat Pednekar - Assignment: 5***
