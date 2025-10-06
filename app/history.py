@@ -1,6 +1,6 @@
-########################
-# History Management    #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# History Management 
 
 from abc import ABC, abstractmethod
 import logging

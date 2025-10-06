@@ -1,6 +1,7 @@
-########################
-# Calculator Config    #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Calculator Config    
+
 
 from dataclasses import dataclass
 from decimal import Decimal

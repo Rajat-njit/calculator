@@ -1,3 +1,5 @@
+# Author: Rajat Pednekar, UCID-rp2348
+
 import pytest
 import os
 from decimal import Decimal

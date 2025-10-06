@@ -1,6 +1,7 @@
-########################
-# Calculator REPL       #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Calculator REPL       
+
 
 from decimal import Decimal
 import logging

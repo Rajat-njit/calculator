@@ -1,3 +1,5 @@
+# Author: Rajat Pednekar, UCID-rp2348
+
 import pytest
 from decimal import Decimal
 from app.calculator_config import CalculatorConfig

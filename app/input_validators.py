@@ -1,6 +1,6 @@
-########################
-# Input Validation     #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Input Validation 
 
 from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation

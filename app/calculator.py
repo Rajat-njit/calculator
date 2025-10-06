@@ -1,6 +1,6 @@
-########################
-# Calculator Class      #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Calculator Class      
 
 from decimal import Decimal
 import logging

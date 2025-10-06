@@ -1,6 +1,6 @@
-########################
-# Calculator Memento    #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Calculator Memento    
 
 from dataclasses import dataclass, field
 import datetime

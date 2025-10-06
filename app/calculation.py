@@ -1,6 +1,7 @@
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
 # Calculation Model    #
-########################
+
 
 from dataclasses import dataclass, field
 import datetime

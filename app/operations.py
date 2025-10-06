@@ -1,6 +1,7 @@
-########################
-# Operation Classes    #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Operation Classes
+
 
 from abc import ABC, abstractmethod
 from decimal import Decimal

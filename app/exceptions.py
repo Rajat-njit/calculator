@@ -1,6 +1,7 @@
-########################
-# Exception Hierarchy  #
-########################
+# Author: Rajat Pednekar, UCID-rp2348
+
+# Exception Hierarchy  
+
 
 class CalculatorError(Exception):
     """

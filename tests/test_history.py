@@ -1,3 +1,5 @@
+# Author: Rajat Pednekar, UCID-rp2348
+
 import pytest
 from unittest.mock import Mock, patch
 from app.calculation import Calculation

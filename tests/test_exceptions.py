@@ -1,3 +1,5 @@
+# Author: Rajat Pednekar, UCID-rp2348
+
 import pytest
 from app.exceptions import CalculatorError, ValidationError, OperationError, ConfigurationError
 
