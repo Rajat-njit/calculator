@@ -1,5 +1,5 @@
 # Advanced Calculator Application
-![Build](https://github.com/Rajat-njit/calculator/actions/workflows/python-app.yml/badge.svg)
+
 A sophisticated, modular calculator application built with Python that integrates advanced design patterns, persistent data management via pandas, and full test automation with GitHub Actions.
 
 ## Features
