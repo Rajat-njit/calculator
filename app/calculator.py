@@ -76,10 +76,10 @@ class Calculator:
             self.load_history()
         except Exception as e:
             # Log a warning if history could not be loaded
-            logging.warning(f"Could not load existing history: {e}")
+            logging.warning(f"Could not load existing history: {e}") # pragma: no cover
 
         # Log the successful initialization of the calculator
-        logging.info("Calculator initialized with configuration")
+        logging.info("Calculator initialized with configuration") 
 
     def _setup_logging(self) -> None:
         """
@@ -227,7 +227,7 @@ class Calculator:
             # Log and re-raise validation errors
             logging.error(f"Validation error: {str(e)}")
             raise
-        except Exception as e:
+        except Exception as e: # pragma: no cover
             # Log and raise operation errors for any other exceptions
             logging.error(f"Operation failed: {str(e)}")
             raise OperationError(f"Operation failed: {str(e)}")

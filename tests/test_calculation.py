@@ -132,3 +132,34 @@ def test_from_dict_result_mismatch(caplog):
 
     # Assert
     assert "Loaded calculation result 10 differs from computed result 5" in caplog.text
+
+# Add these to test_calculation.py
+
+def test_format_result_edge_case():
+    """Test format_result with very large precision."""
+    calc = Calculation(operation="Division", operand1=Decimal("1"), operand2=Decimal("3"))
+    result = calc.format_result(precision=50)
+    assert '0.3333333333' in result
+
+def test_calculation_repr():
+    """Test __repr__ method."""
+    calc = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+    repr_str = repr(calc)
+    assert "Calculation(operation='Addition'" in repr_str
+    assert "operand1=2" in repr_str
+    assert "operand2=3" in repr_str
+    assert "result=5" in repr_str
+
+def test_calculation_str():
+    """Test __str__ method."""
+    calc = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+    str_repr = str(calc)
+    assert str_repr == "Addition(2, 3) = 5"
+
+def test_calculation_equality_with_non_calculation():
+    """Test equality comparison with non-Calculation object."""
+    calc = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+    assert calc.__eq__("not a calculation") == NotImplemented
+    assert calc != "not a calculation"
+    assert calc != 42
+    assert calc != None
