@@ -3,10 +3,10 @@ name: Run Tests on Push or Pull Request to Main
 on:
   push:
     branches:
-      - main        # Run tests on any push to main
+      - main          # Run tests on any push to main
   pull_request:
     branches:
-      - main        # Run tests on any pull request to main
+      - main          # Run tests on any pull request to main
 
 jobs:
   test:
@@ -15,32 +15,31 @@ jobs:
     steps:
       # Step 1: Check out repository
       - name: Check out the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Set up Python environment
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'    # You can set to '3.10', '3.11', etc.
+          python-version: '3.x'     # You can specify 3.10, 3.11, etc.
 
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # Ensure key testing libraries are installed
           pip install pytest pytest-cov pandas python-dotenv
 
-      # Step 4: Run tests with coverage enforcement
+      # Step 4: Run tests and enforce full coverage
       - name: Run tests with pytest and enforce 100% coverage
         run: |
           pytest --cov=app tests/
           coverage report --fail-under=100
 
-      # (Optional) Step 5: Upload HTML coverage report as GitHub artifact
+      # Step 5 (optional): Upload coverage HTML as artifact
       - name: Upload coverage HTML
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-html
           path: htmlcov
