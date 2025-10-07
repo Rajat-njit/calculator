@@ -31,8 +31,6 @@ A sophisticated, modular calculator application built with Python that integrate
 - **Validation**: Comprehensive configuration validation with error handling
 - **Flexible Settings**: Customizable precision, history size, and file paths
 
-
-
 ## Requirements
 
 - Python 3.8+
@@ -41,7 +39,7 @@ A sophisticated, modular calculator application built with Python that integrate
 - pytest-cov
 - python-dotenv
 
-## Installation## Installation
+## Installation
 
 ### 0. Clone the Repository
 ```bash
@@ -87,30 +85,31 @@ CALCULATOR_DEFAULT_ENCODING=utf-8
 ```bash
 python main.py
 ```
-
 ### Available Commands
 
 Once the calculator is running, you can use the following commands:
 
-#### Arithmetic Operations
+#### Example REPL Session
 ```
-> add 5 3
-Result: 8
+Calculator started. Type 'help' for commands.
 
-> subtract 10 4
-Result: 6
+Enter command: add
+Enter numbers (or 'cancel' to abort):
+First number: 12
+Second number: 8
 
-> multiply 6 7
-Result: 42
+Result: 20
 
-> divide 15 3
-Result: 5
+Enter command: divide
+Enter numbers (or 'cancel' to abort):
+First number: 10
+Second number: 0
+Error: Division by zero is not allowed
 
-> power 2 8
-Result: 256
+Enter command: history
+Calculation History:
+1. Addition(12, 8) = 20
 
-> root 27 3
-Result: 3
 ```
 
 #### History Management
@@ -209,12 +208,14 @@ pytest
 
 ```bash
 pytest --cov=app tests/
+coverage report --fail-under=100
 ```
 
 ### Generate HTML Coverage Report
 
 ```bash
 pytest --cov=app --cov-report=html tests/
+open htmlcov/index.html
 ```
 
 This generates an HTML coverage report in the `htmlcov/` directory.
@@ -229,6 +230,15 @@ coverage report --fail-under=100
 
 After generating the HTML report, open `htmlcov/index.html` in your browser to view detailed coverage information.
 
+### Edge Cases Tested
+
+1. Invalid numeric inputs (abc, special chars)
+2. Division by zero
+3. Negative and zero roots
+4. Missing .env file (defaults applied)
+5. Undo/Redo stack boundaries
+6. Auto-save/load failure handling
+
 ## Continuous Integration
 
 This project uses GitHub Actions for automated testing and coverage checking. The CI pipeline:
@@ -242,10 +252,13 @@ This project uses GitHub Actions for automated testing and coverage checking. Th
 ### GitHub Actions Workflow
 
 The workflow is defined in `.github/workflows/tests.yml` and automatically:
-- Tests the application on Ubuntu latest
+- Runs on every push and pull request to main
+- Installs dependencies
 - Generates coverage reports
 - Fails the build if coverage is below the required threshold
-
+- Enforces 100% coverage
+- Uploads HTML coverage report as artifact
+  
 ## Design Patterns
 
 ### 1. Observer Pattern (`history.py`)
@@ -297,4 +310,7 @@ All configuration options can be set via environment variables in the `.env` fil
 | `CALCULATOR_HISTORY_DIR` | history/ | Directory for history files |
 
 ## Author
-**Rajat Pednekar - Assignment: 5***
+
+**Rajat Pednekar (UCID: rp2348)**
+**New Jersey Institute of Technology**
+**Python for Web Development – Assignment 5**
